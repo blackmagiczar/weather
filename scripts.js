@@ -9,7 +9,7 @@ function searchCityString() {
 
 function callAPI(city = "new york") {
   let callResponse = "";
-  const geoUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=2&appid=fb1ebcfadaae262fda9f426e1a384d5e`;
+  const geoUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=2&appid=fb1ebcfadaae262fda9f426e1a384d5e`;
   fetch(geoUrl)
     .then((response) => {
       if (!response.ok) {
