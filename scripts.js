@@ -57,7 +57,7 @@ function callAPI(city = "new york") {
               let item = "";
               console.log(data);
               document.getElementById("fiveDay").innerHTML = "";
-              for (const key of data.list) {
+              for (let key of data.list) {
                 item += '<div class="forecast"><div id="forContainer"><p>';
                 const d = new Date(key.dt_txt);
                 let day = d.toDateString().slice(0, 3);
@@ -72,8 +72,9 @@ function callAPI(city = "new york") {
                 item +=
                   "<p>" + Math.floor(key.main.temp - Kelvin) + Deg + "</p>";
                 item += "</div></div>";
-                document.getElementById("fiveDay").innerHTML += item;
+                //document.getElementById("fiveDay").innerHTML += item;
               }
+              document.getElementById("fiveDay").innerHTML += item;
             })
             .catch((error) => {
               console.error("Error:", error);
@@ -99,4 +100,19 @@ function titleCase(str) {
     str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
   }
   return str.join(" ");
+}
+
+function rightScroll() {
+  let el = document.getElementById("fiveDay");
+  let right = el.style.right || 0;
+  el.style.position = "relative";
+  el.style.right = `${parseInt(right, 10) + 96}vw`;
+  return 0;
+}
+function leftScroll() {
+  let el = document.getElementById("fiveDay");
+  let left = el.style.right || 0;
+  el.style.position = "relative";
+  el.style.right = `${parseInt(left, 10) - 96}vw`;
+  return 0;
 }

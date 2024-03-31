@@ -37,11 +37,21 @@
           <p id="maximumTemp">H: 29&deg</p>
         </div>
       </div>
-      <div id="fiveDay">
-        <div class="forecast" id="one">
-          <p id="time">2pm</p>
-          <img id="icon" alt="" srcset="" />
-          <p id="temp">25&deg</p>
+      <div id="scroll">
+        <button type="button" onclick="leftScroll()">
+          <i class="fa-solid fa-chevron-left scroll"></i>
+        </button>
+        <button type="button" onclick="rightScroll()">
+          <i class="fa-solid fa-chevron-right scroll"></i>
+        </button>
+      </div>
+      <div id="fiveDayContainer">
+        <div id="fiveDay">
+          <div class="forecast" id="one">
+            <p id="time">2pm</p>
+            <img id="icon" alt="" srcset="" />
+            <p id="temp">25&deg</p>
+          </div>
         </div>
       </div>
     </main>
