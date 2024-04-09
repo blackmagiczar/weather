@@ -89,10 +89,6 @@ function callAPI(city = "new york") {
     .catch((error) => {
       console.error("Error:", error);
     });
-
-  // Define the API URL
-
-  // Make a GET request
 }
 function titleCase(str) {
   str = str.toLowerCase().split(" ");
@@ -106,13 +102,13 @@ function rightScroll() {
   let el = document.getElementById("fiveDay");
   let right = el.style.right || 0;
   el.style.position = "relative";
-  el.style.right = `${parseInt(right, 10) + 96}vw`;
+  el.style.right = `${parseInt(right, 10) + 10}vw`;
   return 0;
 }
 function leftScroll() {
   let el = document.getElementById("fiveDay");
   let left = el.style.right || 0;
   el.style.position = "relative";
-  el.style.right = `${parseInt(left, 10) - 96}vw`;
+  el.style.right = `${parseInt(left, 10) - 10}vw`;
   return 0;
 }
