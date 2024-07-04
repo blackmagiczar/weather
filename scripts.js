@@ -1,10 +1,19 @@
 let latlong = "";
 const Kelvin = 273.15;
 const Deg = "\u00B0";
+
+window.onload = () => {
+  const cooky = decodeURIComponent(document.cookie);
+  console.log("Cookie:" + cooky.substring(5, cooky.length));
+  //call api with cookie input
+  callAPI(cooky.substring(5, cooky.length));
+};
+
 function searchCityString() {
+  document.cookie = "city=";
   let input = document.getElementById("searchCity").value;
   callAPI(input);
-  //console.log(callResponse);
+  document.cookie = "city=" + input;
 }
 
 function callAPI(city = "new york") {
@@ -55,7 +64,7 @@ function callAPI(city = "new york") {
             .then((data) => {
               //build each element
               let item = "";
-              console.log(data);
+              //console.log(data);
               document.getElementById("fiveDay").innerHTML = "";
               for (let key of data.list) {
                 item += '<div class="forecast"><div id="forContainer"><p>';
